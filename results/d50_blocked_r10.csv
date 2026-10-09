@@ -1,0 +1,3 @@
+test,train_runs,configuration,method,knots,identity_rmse_C_rounded,mapped_rmse_C_rounded,rmse_reduction_percent_rounded,first_event_status,source_deadline_status,entire_search_history_in_training_support,final_mapped_gradient_K_min_minus_1,strict_horizon_after_source_event_min
+5,4;6;7;8,D50,monotone_piecewise_linear,7,62.7714,3.1616,94.96,right_censored,missed,yes,1.016382,1.434889
+9,4;6;7;8,D50,monotone_piecewise_linear,7,61.0447,2.4225,96.03,right_censored,missed,yes,1.023004,0.146208
