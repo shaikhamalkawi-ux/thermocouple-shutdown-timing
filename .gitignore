@@ -1,0 +1,37 @@
+# Do not publish source datasets or restricted/reviewer files
+data/raw/
+data/restricted/
+data/private/
+private/
+restricted/
+review_only/
+author_private/
+credentials/
+secrets/
+*.key
+*.pem
+.env
+.env.*
+!.env.example
+
+# Reproducibility build intermediates
+.venv/
+venv/
+__pycache__/
+*.py[cod]
+.pytest_cache/
+.mypy_cache/
+.ipynb_checkpoints/
+build/
+dist/
+tmp/
+temp/
+*.aux
+*.log
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+
+# System clutter
+.DS_Store
+Thumbs.db
