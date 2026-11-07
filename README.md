@@ -1,6 +1,6 @@
 # Thermocouple substitution and shutdown-event timing in packed-bed thermal storage
 
-**Repository status: public methods-and-results preview; not a complete executable raw-data replication release, a journal-submitted manuscript, or a Zenodo deposit.**
+**Repository status: public source-only reproducibility snapshots for the primary Weber replay, D50 and conditional supporting analyses; see [November 2026 source-only archives](reproducibility/2026-11/README.md). Original Weber measurements are not redistributed. This is not an operational controller validation, accepted manuscript, or Zenodo DOI release.**
 
 This project studies whether moving a thermocouple from the source-designated shutdown location to another location preserves a threshold-defined heating-termination event. The relevant outcome is **first-event timing**, not temperature correlation or reconstruction error alone.
 
@@ -11,6 +11,10 @@ This project studies whether moving a thermocouple from the source-designated sh
 - **Principal comparison:** four thermocouples nominally at the same axial level. The nearest 80-mm alternative reaches the unchanged criterion 23.59–31.12 minutes before the recorded commanded heater-off across six runs.
 - **Temperature-versus-event check:** in an internal configuration-blocked analysis, a seven-knot monotone map lowers held-out D50 temperature RMSE by 94.96% and 96.03% in two runs, yet both first crossings are right-censored and both source deadlines are missed. These are two cases from one previously examined experimental apparatus, not external validation.
 - **Separate mechanistic external check:** KIT VESPA data, [DOI 10.35097/byayp53e2q6ns3z3](https://doi.org/10.35097/byayp53e2q6ns3z3); **not an external operational controller-chain validation**.
+
+## November 2026 author-review reproducibility code
+
+The [public source-only archives](reproducibility/2026-11/README.md) include Python for original Weber source-hash admission, the 24-row first-crossing replay and an exploratory two-case D50 evaluation, plus conditional exact/event/error-box modules. Raw source measurements must be downloaded directly from [Mendeley Data Version 2](https://doi.org/10.17632/3pp86gdvh4.2). The fixed historical code is inspectable but does not yet carry a finalized software reuse license. The mathematical and operational limitations remain as stated in the source package.
 
 ## What is included
 
@@ -40,4 +44,4 @@ Raw Weber measurements, raw VESPA files (CC BY-NC 4.0), access-restricted third-
 
 ## Citation and release status
 
-The manuscript version remains an **author-review candidate**. There is currently **no tagged archival release, Zenodo DOI or approved code license**. Do not cite this repository as a complete reproduction archive, or infer prospective controller equivalence, safety, causal energy benefit, or generalization beyond the reported apparatus.
+The manuscript version remains an **author-review candidate**. A public code snapshot now exists under [`reproducibility/2026-11`](reproducibility/2026-11), but there is still **no tagged archival release, Zenodo DOI or agreed software-reuse license**. Do not cite this repository as a complete reproduction archive, or infer prospective controller equivalence, safety, causal energy benefit, or generalization beyond the reported apparatus.
