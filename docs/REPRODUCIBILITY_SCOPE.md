@@ -1,38 +1,27 @@
-# Reproducibility scope — repository preparation stage
+# Reproducibility scope | DGIG November 2026 public source-only release
 
-**Current state: partial public verification materials; NOT a complete raw-source reproduction of DGIG R10.**
+This repository is a **research-code and derived-results deposit**, not the manuscript/PDF host, historical supervisory controller implementation, complete hardware validation, or an open-source license grant. The source-only archives and directly readable scripts are in [`reproducibility/2026-11/`](../reproducibility/2026-11/README.md). No author-review manuscript or Supplement PDF is present in the current public branch.
 
-## Included
+## Available materials and their limits
 
-- `src/thermocouple_event.py`: a small independent, standard-library implementation of the paper's described trailing-gradient first-event *definition*. It handles finite-interval lag interpolation, explicit arming, strict pre-action censoring and descriptive one-sided event windows. It is **not** the original supervisory controller or the authors' entire calculation pipeline.
-- `tests/test_thermocouple_event.py`: 12 **synthetic** unit tests of that standalone helper.
-- `results/primary_same_level_r10.csv`: 24 paper-reported, **rounded** primary candidate/run values, transcribed from the R10 manuscript table.
-- `results/d50_blocked_r10.csv`: two paper-reported, **rounded** D50 held-out results from the locked configuration-blocked R10 analysis.
-- `scripts/check_result_ledger.py`: data-shape, sign, and arithmetic consistency checks of those rounded tables. This script **does not** reconstruct them from raw measurements.
+| File family | What can be inspected or checked | What cannot be inferred |
+| --- | --- | --- |
+| [`src/`](../src/) and [`tests/`](../tests/) | Independent event helper, 12 synthetic contract checks | Original 2017/2025 supervisory-controller code or new measured shutdowns |
+| [`results/`](../results/) and [ledger checker](../scripts/check_result_ledger.py) | 24+2 rounded result values transcribed from earlier research reports | Independent calculations from source measurements |
+| [Primary/D50 source-only archive](../reproducibility/2026-11/DGIG_Weber_SourceOnly_Primary_D50_v1.zip) | Source SHA-256 admission, primary event replay, blocked D50 replay/verification code | Reproduction before obtaining original Weber V2 data |
+| [Full-methods source-only archive](../reproducibility/2026-11/DGIG_Weber_SourceOnly_FullMethods_v1.zip) | Event-contract, exact rational witness, illustrative raw-error modules and bounded audit materials | Complete historical R13 gradient-sensitivity rerun or physical sensor-error robustness |
+| [Readable major Python scripts](../reproducibility/2026-11/scripts/) | Transparent source methodology without opening ZIPs | Permission to sublicense/repackage the code or claimed external operational validation |
 
-## Excluded and not yet available from this repository
+## Input admission and scientific boundaries
 
-- Nine raw Weber input files and full source recovery audit.
-- Full affine, causal, PAVA and 5-/7-knot mapping fit implementations, cross-validation predictions and independent numerical replay.
-- Raw KIT VESPA data; restricted/external datasets.
-- The R10 manuscript PDF, complete LaTeX production source and full supplementary reproducibility archive, which remain under author review.
-- Zenodo DOI, tagged archival release, code-license decision and independent fresh-clone raw-source verification.
+Obtain the **nine unchanged** upstream `MeasurementData.CSV` files from Weber [Mendeley Data Version 2](https://doi.org/10.17632/3pp86gdvh4.2). Their bytes are not redistributed on this repository. Follow the hash check and commands in the [November reproducibility instructions](../reproducibility/2026-11/README.md). The 15-minute finite-interval gradient is *source-compatible*, not byte-for-byte historical PLC code.
 
-## Run checks
+Prior separately performed clean-extraction audits reported 24/24 primary and 466/466 D50 comparisons; these are historical receipts, not tests freshly performed by cloning the public repository. The historical R13 gradient-sensitivity module is **HOLD** pending its legacy dependency archive; optional floating-point solver byte equality is also not claimed. The 2026 Weber data-article [corrigendum](https://doi.org/10.1016/j.dib.2026.113089) is an acknowledgement amendment, not a new input dataset.
 
-Use Python 3.11 or later. No third-party packages are required for the included checks:
+The six Weber tests come from **one experimental apparatus**. Twenty-four candidate/run results are dependent comparisons. D50 Tests 5 and 9 have no mapped first crossing observed before their strict pre-action recording horizons; these end only 1.435 and 0.146 minutes after the respective source deadlines. Accordingly the one-sided deadlines are missed, but no later-event duration is measured. The physical controller was not rewired. No result establishes energy savings, safety, prospective sensor interchangeability, or causal controller response.
 
-```bash
-python -m unittest discover -s tests -v
-python scripts/check_result_ledger.py
-```
+KIT VESPA and separately audited NIST/PCM logs are diagnostic external context with different predicates and incomplete historical controller-action mapping, not Weber-type replacement validation; see [data provenance](DATA_SOURCES.md).
 
-The initial staging verification completed **12/12 synthetic unit tests** and the **24+2 rounded record consistency gate**. These are limited software/table checks, not replication of the journal results. The published-source scientific calculations were separately audited in the private research package; its 466/466 configuration-blocked checks are **not being rerun by this GitHub repository**.
+## Copyright and public-draft status
 
-Do not cite this GitHub project as a complete executable companion archive until the full input pipeline is admitted, released with appropriate permissions and verified from a fresh clone.
-
-## R12 reviewer archive (prepared separately; not hosted on GitHub)
-
-The DGIG R12 editorial/reproducibility closure (10 October 2026) prepared a separate, reviewer-facing ZIP named `DGIG_R12_Reviewer_Reproducibility.zip` (20,112,340 bytes; SHA-256 `711551269b904ad73614111c77084d7658101f90dde5ed05b07e2c04716b9413`). That ZIP contains the original compact CC BY 4.0 Weber source measurements for Tests 1–9, paper-relevant reproduction programs, recorded R9 numerical results, and the frozen D50 checkpoint with independent per-comparison audit. A clean-extraction replay of the original native source data passed 24/24 primary numerical assertions, and a separate clean-extraction D50 raw-source audit passed 466/466 checks. The full 8+7-stage R9 pipeline was *not* freshly completed in that session; historical receipts are included and labeled as such.
-
-The reviewer ZIP **is not uploaded to or downloadable from this public GitHub repository**. It must be provided through the manuscript's approved supplementary-material or authorized reviewer-access channel, with a fresh integrity check. Until that submission step is completed, this repository remains a partial public methods preview, not a complete standalone replication deposit. No Zenodo DOI has been assigned.
+The current branch contains code, derived results and documentation **only**; the author-unassigned working manuscript and focused supplement are maintained privately for review. Deleting draft files from the current branch does not automatically erase any previously published Git history, caches, forks or copies. No DOI, formal article acceptance, final author list or general-purpose redistribution license has been established. See [license status](../reproducibility/2026-11/LICENSE_STATUS.md) and [citation record](../reproducibility/2026-11/CITATION_AND_VERSION.md).

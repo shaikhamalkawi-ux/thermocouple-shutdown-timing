@@ -1,47 +1,45 @@
-# Thermocouple substitution and shutdown-event timing in packed-bed thermal storage
+# DGIG | Thermocouple first-crossing and shutdown-event timing
 
-**Repository status: public source-only reproducibility snapshots for the primary Weber replay, D50 and conditional supporting analyses; see [November 2026 source-only archives](reproducibility/2026-11/README.md). Original Weber measurements are not redistributed. This is not an operational controller validation, accepted manuscript, or Zenodo DOI release.**
+**Public repository for research code, derived result ledgers, and reproducibility documentation only.** The working manuscript, its PDF supplement, and journal-preparation source files are **not hosted in the current public branch**. The research has not been accepted or submitted to a journal, and no journal/software DOI or general code-reuse license has been assigned.
 
-This project studies whether moving a thermocouple from the source-designated shutdown location to another location preserves a threshold-defined heating-termination event. The relevant outcome is **first-event timing**, not temperature correlation or reconstruction error alone.
+## Scientific question and bounded evidence
 
-## Scientific setting
+The study asks whether improving temperature reconstruction or moving a thermocouple preserves the first time a threshold-defined heating-termination criterion is satisfied. The question concerns **recorded-trace event timing**, not controller installation or proven safe sensor replacement.
 
-- **Source system:** Weber Version-2 packed-bed experiments (Tests 4–9), [Mendeley Data, DOI 10.17632/3pp86gdvh4.2](https://doi.org/10.17632/3pp86gdvh4.2).
-- **Published control description:** trailing 15-minute temperature-gradient criterion below 1 K/min, using TR404-108e as the source.
-- **Principal comparison:** four thermocouples nominally at the same axial level. The nearest 80-mm alternative reaches the unchanged criterion 23.59–31.12 minutes before the recorded commanded heater-off across six runs.
-- **Temperature-versus-event check:** in an internal configuration-blocked analysis, a seven-knot monotone map lowers held-out D50 temperature RMSE by 94.96% and 96.03% in two runs, yet both first crossings are right-censored and both source deadlines are missed. These are two cases from one previously examined experimental apparatus, not external validation.
-- **Separate mechanistic external check:** KIT VESPA data, [DOI 10.35097/byayp53e2q6ns3z3](https://doi.org/10.35097/byayp53e2q6ns3z3); **not an external operational controller-chain validation**.
+- Original measurements: Weber et al., [Mendeley Data Version 2](https://doi.org/10.17632/3pp86gdvh4.2), Tests 4–9 for the six source-controlled heating runs; original source CSV bytes are not mirrored here.
+- Original reported rule: trailing 15-minute temperature-gradient criterion below 1 K/min, applied to source sensor TR404-108e.
+- Candidate comparison: the nearest alternative, TR404-085d at 80 mm radial position, first satisfies the reconstructed criterion 23.59–31.12 min before the **logged command** in the six recorded heating runs.
+- Internal D50 stress check: a seven-knot temperature-fitted map decreases temperature RMSE by 94.96% and 96.03% in Tests 5 and 9, respectively, but neither mapped first crossing is observed by the chosen **reconstructed source-event deadline** within the short available horizons. Event times thereafter are unknown.
+- None of these outcomes records an actual alternative-sensor-controlled heater shutdown. Six runs on one apparatus—not 24 independent experimental units—underlie the physical comparison.
 
-## November 2026 author-review reproducibility code
+The historical supervisory derivative routine was not recovered; the publicly inspectable finite-interval event rule is *source-compatible*, **not byte-identical PLC code**. Independent ice-storage/PCM-TES logs support only diagnostic distinctions among temperatures, threshold predicates, process flags and actuator states, not transferable replacement-controller validation.
 
-The [public source-only archives](reproducibility/2026-11/README.md) include Python for original Weber source-hash admission, the 24-row first-crossing replay and an exploratory two-case D50 evaluation, plus conditional exact/event/error-box modules. Raw source measurements must be downloaded directly from [Mendeley Data Version 2](https://doi.org/10.17632/3pp86gdvh4.2). The fixed historical code is inspectable but does not yet carry a finalized software reuse license. The mathematical and operational limitations remain as stated in the source package.
+## Public files
 
-## What is included
+| Path | Contents and role |
+| --- | --- |
+| [`reproducibility/2026-11/`](reproducibility/2026-11/README.md) | Source-only Weber first-crossing and D50 archives, supporting mathematical modules, instructions and explicit replay limitations |
+| [`reproducibility/2026-11/scripts/`](reproducibility/2026-11/scripts/) | Readable key Python scripts |
+| [`src/`](src/) and [`tests/`](tests/) | Standalone event helper and 12 synthetic tests, **not** the historical PLC program |
+| [`results/`](results/) | 24 primary and 2 D50 manuscript-transcribed rounded result rows; not raw measurements |
+| [`scripts/check_result_ledger.py`](scripts/check_result_ledger.py) | Rounded-ledger arithmetic/format consistency tests, not raw-data replication |
+| [`docs/`](docs/) | Provenance, inference boundaries and precise reproducibility scope |
 
-| Location | Content | Interpretation |
-|---|---|---|
-| [src/thermocouple_event.py](src/thermocouple_event.py) | Independent standard-library 15-minute finite-interval event helper | A transparent method implementation, **not** the original supervisory code or complete study pipeline |
-| [tests/](tests/) | 12 synthetic checks | Tests of event-definition behavior, not raw-data replication |
-| [results/primary_same_level_r10.csv](results/primary_same_level_r10.csv) | 24 manuscript-transcribed rounded rows | Source report values, not fresh recomputation |
-| [results/d50_blocked_r10.csv](results/d50_blocked_r10.csv) | 2 manuscript-transcribed rounded D50 rows | Both are censored and miss the one-sided source deadline |
-| [scripts/check_result_ledger.py](scripts/check_result_ledger.py) | Rounded-table arithmetic gate | Consistency, **not** independent science verification |
-| [docs/](docs/) | Source provenance, R10 fingerprints, scope and limitations | Release boundaries and claim trace |
+To reconstruct the primary analysis, obtain the **unmodified nine** `MeasurementData.CSV` inputs from [Weber V2](https://doi.org/10.17632/3pp86gdvh4.2), then follow the instructions and hash admission checks in [the source-only archive README](reproducibility/2026-11/README.md).
 
-## Run the published repository checks
-
-Python 3.11+ is sufficient; these checks have **no third-party Python dependencies**:
+To run the basic standard-library tests (Python 3.11+):
 
 ```bash
 python -m unittest discover -s tests -v
 python scripts/check_result_ledger.py
 ```
 
-The public repository includes a GitHub Actions check with the same commands. Initial staging checks passed 12 synthetic tests and a 24+2 table-consistency gate; this must **not** be confused with the manuscript's separate 466/466 independently audited configuration-blocked numerical result checks.
+These tests check definitions and transcribed ledger arithmetic. A **separate** private fresh-source audit previously reported 24/24 primary comparisons and 466/466 D50 numerical checks. Neither count should be presented as a fresh clone/run of this public repository alone. The historical R13-dependent sensitivity module is not yet independently replayable.
 
-## What is deliberately not uploaded
+## Provenance, use and citation
 
-Raw Weber measurements, raw VESPA files (CC BY-NC 4.0), access-restricted third-party measurements, private correspondence, pre-submission author material, and unreviewed R10 manuscript/LaTeX production files are not published in this repository. Read [Reproducibility scope](docs/REPRODUCIBILITY_SCOPE.md) and [Data sources](docs/DATA_SOURCES.md).
+The research-code snapshot is pinned at [commit `4b16d30aabe5c549cc27073ad8c7102d94d70ecf`](https://github.com/shaikhamalkawi-ux/thermocouple-shutdown-timing/tree/4b16d30aabe5c549cc27073ad8c7102d94d70ecf/reproducibility/2026-11); for current documentation use the latest branch commit SHA. Cite the original [Weber data DOI](https://doi.org/10.17632/3pp86gdvh4.2) and [Weber data article](https://doi.org/10.1016/j.dib.2025.111743) when using their measurements. The [2026 corrigendum](https://doi.org/10.1016/j.dib.2026.113089) adds a contributor acknowledgement; it does not supply a new controller algorithm or altered measurements.
 
-## Citation and release status
+**No license is granted by visibility alone.** Authorship, contributor permissions, and software redistribution rights remain to be resolved. Original Weber/VESPA raw measurements, restricted NIST/PCM source materials, private correspondence and article-preparation drafts are excluded. Do not infer population-level validity, safety, physical energy savings, or prospective controller equivalence from the public calculations.
 
-The manuscript version remains an **author-review candidate**. A public code snapshot now exists under [`reproducibility/2026-11`](reproducibility/2026-11), but there is still **no tagged archival release, Zenodo DOI or agreed software-reuse license**. Do not cite this repository as a complete reproduction archive, or infer prospective controller equivalence, safety, causal energy benefit, or generalization beyond the reported apparatus.
+See [reproducibility scope](docs/REPRODUCIBILITY_SCOPE.md), [data sources](docs/DATA_SOURCES.md), [license status](reproducibility/2026-11/LICENSE_STATUS.md) and [citation/version](reproducibility/2026-11/CITATION_AND_VERSION.md).
