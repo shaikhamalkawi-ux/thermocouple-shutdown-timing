@@ -14,6 +14,10 @@ The study asks whether improving temperature reconstruction or moving a thermoco
 
 The historical supervisory derivative routine was not recovered; the publicly inspectable finite-interval event rule is *source-compatible*, **not byte-identical PLC code**. Independent ice-storage/PCM-TES logs support only diagnostic distinctions among temperatures, threshold predicates, process flags and actuator states, not transferable replacement-controller validation.
 
+## Event-lead certificate source-only release (November 2026)
+
+The [joint threshold and raw-error early-event certificate](reproducibility/2026-11-event-lead/README.md) includes two full source-data replay programs, 24 dependent-case result summaries and 1,200-case numerical verification fingerprints. Its lead bounds are conditional on a hypothetical raw-sample error box, a retrospectively varied threshold, and an unchanged logged command and source-compatible 15-minute rule—not demonstrated sensor tolerances or actual replacement-controlled shutdowns. No working manuscript PDF or original Weber data is redistributed.
+
 ## Public files
 
 | Path | Contents and role |

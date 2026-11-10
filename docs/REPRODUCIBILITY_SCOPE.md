@@ -12,6 +12,10 @@ This repository is a **research-code and derived-results deposit**, not the manu
 | [Full-methods source-only archive](../reproducibility/2026-11/DGIG_Weber_SourceOnly_FullMethods_v1.zip) | Event-contract, exact rational witness, illustrative raw-error modules and bounded audit materials | Complete historical R13 gradient-sensitivity rerun or physical sensor-error robustness |
 | [Readable major Python scripts](../reproducibility/2026-11/scripts/) | Transparent source methodology without opening ZIPs | Permission to sublicense/repackage the code or claimed external operational validation |
 
+## Supplemental event-lead source-only module
+
+The [joint threshold--raw-error module](../reproducibility/2026-11-event-lead/README.md) includes two independently checkable Python replays and derived summaries; the raw data and journal PDFs are not hosted. Its strict pre-action separation check is explicit and its perturbation box has no calibrated physical-uncertainty interpretation. This module does not supersede or modify the earlier Weber/D50 source-only replay or historical controller limitations.
+
 ## Input admission and scientific boundaries
 
 Obtain the **nine unchanged** upstream `MeasurementData.CSV` files from Weber [Mendeley Data Version 2](https://doi.org/10.17632/3pp86gdvh4.2). Their bytes are not redistributed on this repository. Follow the hash check and commands in the [November reproducibility instructions](../reproducibility/2026-11/README.md). The 15-minute finite-interval gradient is *source-compatible*, not byte-for-byte historical PLC code.

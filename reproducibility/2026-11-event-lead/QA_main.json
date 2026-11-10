@@ -1,0 +1,55 @@
+{
+  "status": "PASS conditional recorded-trace certificate; not physical measurement budget",
+  "source_hashes": {
+    "4": "985f4452c04e495c6f07227d3ce238975d596caa5a9ea04f8e52fb08645e1d68",
+    "5": "3318140e2de217cce5c407f862b238385f5872e46a11710ef8fed260cce22425",
+    "6": "cbbf5b9846c2bd0945cebf6517f8a9b003f7d4b5aaf54c1de6bc8dc8de1a629b",
+    "7": "19b88ec506a3e2407ca4bb40adeb8247d2467f4913b0a62de39afede45254a6b",
+    "8": "1cbfdd865524224959a0d28836528c79dc7228e37e725e9e4be7b32f4ea799ef",
+    "9": "050bd98e110121a9063e7c361f8a7cbbedad55fea6eed42c05e2e69a22ccbe2e"
+  },
+  "experimental_units": 6,
+  "dependent_candidate_run_records": 24,
+  "certificate_rows": 1200,
+  "halfwidths": [
+    0.0,
+    0.001,
+    0.01,
+    0.02,
+    0.05
+  ],
+  "deltas": [
+    0.0,
+    0.25,
+    0.5,
+    0.75,
+    1.0,
+    1.25,
+    1.5,
+    1.6,
+    2.28,
+    4.57
+  ],
+  "original_radius_parity": "6/6 PASS nearest nominal S5.1",
+  "full_24_at_h0p01_d1": {
+    "halfwidth_K_min": 0.01,
+    "delta_raw_K": 1.0,
+    "passes_24": 24,
+    "nearest_passes_6": 6,
+    "min_guaranteed_lead_over_certified_min": 16.11683330000001,
+    "full_24_min_guaranteed_lead_min": 16.11683330000001,
+    "smallest_nominal_radius_K": 1.5290851184684469
+  },
+  "full_24_at_h0p01_d1p5": {
+    "halfwidth_K_min": 0.01,
+    "delta_raw_K": 1.5,
+    "passes_24": 24,
+    "nearest_passes_6": 6,
+    "min_guaranteed_lead_over_certified_min": 11.566683299999994,
+    "full_24_min_guaranteed_lead_min": 11.566683299999994,
+    "smallest_nominal_radius_K": 1.5290851184684469
+  },
+  "physical_uncertainty_calibrated": false,
+  "shutdown_executed": false,
+  "no_author_submission_change": true
+}

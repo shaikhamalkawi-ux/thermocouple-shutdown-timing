@@ -1,0 +1,41 @@
+{
+  "result": "PASS",
+  "source_decimal_validation": true,
+  "input_sha256_admission": "6/6 PASS",
+  "all_conditional_statuses_earliest_separators": "1200/1200 PASS",
+  "all_certificate_radii_decimal": "1200/1200 PASS",
+  "observed_lead_decimals_checked": 1096,
+  "source_eligible_gradients": {
+    "4": {
+      "source_eligible_n": 4063,
+      "initial_gradient_source": "14.583167150350338823580994577185439501",
+      "initial_gradient_candidate": "21.30952377600000000000000000000000000"
+    },
+    "5": {
+      "source_eligible_n": 4039,
+      "initial_gradient_source": "15.057172903114226147704590818363273453",
+      "initial_gradient_candidate": "21.692313503608886387225548902195608783"
+    },
+    "6": {
+      "source_eligible_n": 4019,
+      "initial_gradient_source": "15.300459462666666666666666666666666667",
+      "initial_gradient_candidate": "21.786329082666666666666666666666666667"
+    },
+    "7": {
+      "source_eligible_n": 4273,
+      "initial_gradient_source": "15.382981953333333333333333333333333333",
+      "initial_gradient_candidate": "21.59397758000000000000000000000000000"
+    },
+    "8": {
+      "source_eligible_n": 4017,
+      "initial_gradient_source": "14.745402394623655913978494623655913979",
+      "initial_gradient_candidate": "20.96541210000000000000000000000000000"
+    },
+    "9": {
+      "source_eligible_n": 3712,
+      "initial_gradient_source": "15.24675720000000000000000000000000000",
+      "initial_gradient_candidate": "21.561144767333333333333333333333333333"
+    }
+  },
+  "claim_boundary": "conditional on fixed recorded grid, rule, threshold band and raw-sample box; neither uncertainty coverage nor prospective action"
+}

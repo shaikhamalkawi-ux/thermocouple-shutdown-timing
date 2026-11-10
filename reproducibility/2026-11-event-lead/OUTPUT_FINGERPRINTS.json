@@ -1,0 +1,12 @@
+{
+  "full_grid_generated_from_original_data_sha256": "5c25844a2d92a7bf208e16f28c2309d3162bf243885fd3e9ad615eb4cb0a96bb",
+  "nominal_24_sha256": "2a21b63cb7f472a0423e080deb9d21874e314f278a9706d29a4b5b639cca2223",
+  "joint_radii_24_sha256": "88c430761d439da72c0e80149d931252078670b73fdcdeac568706c4c1a3a0d4",
+  "summary_grid_sha256": "edb6f476ac2c8df3e8c74a1600708f8c65966b3207d7dbf58ff4a49a3222258c",
+  "nearest_focus_sha256": "a23fcbc217bb65cbc8d5aa958e34bfd90dc53290d4078ca7317709cb23c7cbca",
+  "only_upstream_original_data": true,
+  "missing_full_grid_is_by_design": true,
+  "noncalibrated_mathematical_error_box": true,
+  "strict_preaction_separator_guard": true,
+  "manuscript_or_raw_measurement_redistributed": false
+}
