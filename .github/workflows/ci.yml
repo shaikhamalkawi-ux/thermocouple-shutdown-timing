@@ -14,3 +14,5 @@ jobs:
         run: python -m unittest discover -s tests -v
       - name: Rounded result-ledger checks
         run: python scripts/check_result_ledger.py
+      - name: Conditional event-lead source-only regression tests
+        run: python reproducibility/2026-11-event-lead/test_certificate_guard.py -v
